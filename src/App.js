@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { getTopStories } from './apiCalls';
+import { useState, useEffect } from 'react';
 
 function App() {
+
+  const [stories, setStories] = useState([])
+  const [section, setSection] = useState('home')
+  const [isLoading, setLoading] = useState(true)
+
+
+useEffect(() => {
+ getTopStories(section)
+  .then(data => {
+    setStories(data)
+  })
+  console.log(stories)
+
+ }, [])
+
+// const articles = stories.map(story =>
+//     <li>{story.title}</li>
+//   )
+
+// const displayStories = articles.results.map((result) => {
+//    return <li>{result.title}</li>
+//   })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <section>
+
+    </section>
+  )
+  }
 
 export default App;
