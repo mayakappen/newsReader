@@ -1,6 +1,7 @@
 import './App.css';
 import { getTopStories } from './apiCalls';
 import { useState, useEffect } from 'react';
+import { Newsfeed } from  './Components/Newsfeed'
 
 function App() {
 
