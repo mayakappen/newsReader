@@ -1,7 +1,7 @@
 import './App.css';
 import { getTopStories } from '../apiCalls';
+import  Article  from './Article/Article.js'
 import { useState, useEffect } from 'react';
-// import  Newsfeed  from  './Newsfeed';
 
 function App() {
 
@@ -9,16 +9,25 @@ function App() {
   const [section, setSection] = useState('home')
   const [isLoading, setLoading] = useState(true)
   const [articleView, setArticleView] = useState(false)
+  const [selectedArticle, selectArticle] = useState('')
   
-  useEffect(() => {
+useEffect(() => {
+  setArticleView(false)
     getTopStories(section)
       .then(data => {
         setStories(data.results)
       })
       .finally(() => setLoading('false'))
    console.log(stories)
-
   }, [section])
+
+const selectionHandler = (url) => {
+  setArticleView(true)
+  selectArticle((prevArticle) => {
+    return [...prevArticle, url]
+  })
+  console.log(selectedArticle)
+}
   return (
     <section>
       <nav>
@@ -34,13 +43,16 @@ function App() {
         <button onClick={() => setSection('food')}>Food</button>
         <button onClick={() => setSection('technology')}>Tech</button>
       </nav>
-      <div className="news-feed">{stories.map(story => {
-        return <article className="thumbnail" key={story.updated_date}>
+      {articleView
+      ? <Article />
+      : <div className="news-feed">{stories.map(story => {
+        return <article id={story.url} onClick={() => selectionHandler(story.url)} className="thumbnail" key={story.updated_date}>
           <h2>{story.title}</h2>
           <h3>{story.subsection}</h3>
           <img src={story.multimedia[0].url} height="200px" width="200px"/>
           <p>{story.published_date}</p>
           <h4>{story.abstract}</h4></article>})}</div>
+      }
     </section>
   )
   }
