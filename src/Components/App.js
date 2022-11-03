@@ -21,6 +21,9 @@ function App() {
   }, [section])
   return (
     <section>
+      <nav>
+        <button onClick={() =>  setSection('world')}>World</button>
+      </nav>
       <div className="news-feed">{stories.map(story => {
         return <article className="thumbnail" key={story.updated_date}>
           <h2>{story.title}</h2>
