@@ -9,7 +9,6 @@ function App() {
   const [section, setSection] = useState('home')
   const [isLoading, setLoading] = useState(true)
 
-
   useEffect(() => {
     getTopStories(section)
       .then(data => {
@@ -22,7 +21,17 @@ function App() {
   return (
     <section>
       <nav>
-        <button onClick={() =>  setSection('world')}>World</button>
+        <button onClick={() => setSection('us')}>US</button>
+        <button onClick={() => setSection('world')}>World</button>
+        <button onClick={() => setSection('nyregion')}>NY</button>
+        <button onClick={() => setSection('business')}>Business</button>
+        <button onClick={() => setSection('opinion')}>Opinion</button>
+        <button onClick={() => setSection('sports')}>Sports</button>
+        <button onClick={() => setSection('arts')}>Arts</button>
+        <button onClick={() => setSection('books')}>Books</button>
+        <button onClick={() => setSection('fashion')}>Style</button>
+        <button onClick={() => setSection('food')}>Food</button>
+        <button onClick={() => setSection('technology')}>Tech</button>
       </nav>
       <div className="news-feed">{stories.map(story => {
         return <article className="thumbnail" key={story.updated_date}>
