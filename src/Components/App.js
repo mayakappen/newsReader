@@ -8,7 +8,8 @@ function App() {
   const [stories, setStories] = useState([])
   const [section, setSection] = useState('home')
   const [isLoading, setLoading] = useState(true)
-
+  const [articleView, setArticleView] = useState(false)
+  
   useEffect(() => {
     getTopStories(section)
       .then(data => {
