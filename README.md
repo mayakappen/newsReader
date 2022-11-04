@@ -3,11 +3,13 @@ Created as a take-home challenge at Turing School of Software and Design
 Sort and view articles from the [New York Times API](https://developer.nytimes.com/docs/top-stories-product/1/overview)!
 Users can sort news by categories and expand articles to view more details and a link to the original article.
 
-![news-reader-wireframe copy](https://user-images.githubusercontent.com/102932448/199295895-44852281-933d-47ea-a114-cce7f8d58168.jpg)
-
 ![News Reader](https://user-images.githubusercontent.com/102932448/200022156-ce3ded05-b4dc-4fa5-9082-e44ef9bb5fde.gif)
 
 ![News Reader](https://user-images.githubusercontent.com/102932448/200023032-7420dc17-35f5-4306-9780-6280f384c2e1.gif)
+
+## Planning Documents
+* [wireframe](https://imgur.com/a/5qwuqOV)
+* [Project Board](https://github.com/users/mayakappen/projects/6/views/1)
 
 ## Tech Stack
 * React
