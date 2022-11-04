@@ -1,0 +1,61 @@
+.article-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95vw;
+    height: auto;
+    margin: 1vw;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50vw;
+    height: auto;
+    padding-left: 1vw;
+}
+
+.description {
+    width: 50vw;
+    height: auto;
+
+}
+
+.article-image {
+    width: 45vw;
+    height: auto
+}
+
+
+.abstract {
+    font-size: 3vh;
+}
+
+.byline {
+    font-size: 2vh;
+}
+.subsection {
+    font-size: 2vh;
+}
+
+.date {
+    font-size: 2vh;
+}
+
+a {
+    font-size: 3vh;
+    color: fuchsia;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.title {
+    font-size: 4vh;
+    align-self: center;
+    margin-left: 2vw;
+}

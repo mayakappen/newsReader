@@ -16,9 +16,11 @@ function App() {
       published_date: '',
       abstract: '',
       multimedia: [{
-        url: ''
+        url: '',
+        caption: ''
       }],
-      byline: ''
+      byline: '',
+      item_type: ''
   })
   
 useEffect(() => {
@@ -29,6 +31,7 @@ useEffect(() => {
       })
       .finally(() => setLoading('false'))
    console.log(stories)
+   
   }, [section])
 
 const selectionHandler = (story) => {
@@ -36,18 +39,27 @@ const selectionHandler = (story) => {
   selectArticle(story)
   console.log(story)
 }
+
+const dateHandler = (date) => {
+  let dateArray = Array.from(date).splice(0, 10)
+  let formatted = dateArray[6] + dateArray[5] + '-'+ dateArray[8] + dateArray[9] + '-' + dateArray[0] + dateArray[1] + dateArray[2] + dateArray[3]
+  return formatted
+}
+
   return (
-    <section>
+    <section className="App">
     <Navbar setSection={setSection} />
       {articleView
-      ? <Article selected={selectedArticle}/>
-      : <div className="news-feed">{stories.map(story => {
-        return <article onClick={() => selectionHandler(story)} className="thumbnail" key={story.short_url}>
+      ? <Article selected={selectedArticle} getDate={dateHandler}/>
+      : <div className="news-feed">{stories.map((story) => {
+       return <article onClick={() => selectionHandler(story)} className="thumbnail" key={story.short_url}>
           <h2>{story.title}</h2>
-          <h3>{story.subsection}</h3>
-          <img src={story.multimedia[0].url} height="200px" width="200px"/>
-          <p>{story.published_date}</p>
-          <h4>{story.abstract}</h4></article>})}</div>
+          <img src={story.multimedia[0].url} alt={story.multimedia[0].caption}/>
+          <span className="inline-container">
+          <p>{dateHandler(story.published_date)}</p>
+         <h3>{story.subsection}</h3>
+         </span>
+          </article>})}</div>
       }
     </section>
   )
