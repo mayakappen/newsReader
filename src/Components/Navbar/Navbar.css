@@ -12,7 +12,6 @@
 }
 
 .home:hover {
-    font-size: 17px;
     color: fuchsia;
     cursor: pointer;
 }
@@ -22,13 +21,10 @@
     border: none;
     padding: 0;
     font: inherit;
-    font-size: 14px;
-    font-style: bold;
     cursor: pointer;
     outline: inherit;
 }
 
 .navBtn:hover {
-    font-size: 16px;
     color: fuchsia;
 }
