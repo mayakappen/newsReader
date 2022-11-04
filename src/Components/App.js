@@ -55,7 +55,7 @@ const dateHandler = (date) => {
        return <article onClick={() => selectionHandler(story)} className="thumbnail" key={story.short_url}>
           <h2>{story.title}</h2>
           <img src={story.multimedia[0].url} alt={story.multimedia[0].caption}/>
-          <span class="inline-container">
+          <span className="inline-container">
           <p>{dateHandler(story.published_date)}</p>
          <h3>{story.subsection}</h3>
          </span>

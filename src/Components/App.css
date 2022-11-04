@@ -1,14 +1,14 @@
 .news-feed {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   margin: 1vw;
 }
 
 .thumbnail {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 20vw;
+  justify-content: flex-end;
+  width: 15vw;
   height: auto;
 }
 
@@ -24,4 +24,16 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
+}
+
+h2 {
+  font-size: 2vh;
+}
+
+h3 {
+  font-size: 1vh;
+}
+
+p {
+  font-size: 1vh;
 }
