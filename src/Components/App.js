@@ -1,6 +1,7 @@
 import './App.css';
 import { getTopStories } from '../apiCalls';
 import  Article  from './Article/Article.js'
+import Navbar from './Navbar/Navbar.js'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -37,19 +38,7 @@ const selectionHandler = (story) => {
 }
   return (
     <section>
-      <nav>
-        <button onClick={() => setSection('us')}>US</button>
-        <button onClick={() => setSection('world')}>World</button>
-        <button onClick={() => setSection('nyregion')}>NY</button>
-        <button onClick={() => setSection('business')}>Business</button>
-        <button onClick={() => setSection('opinion')}>Opinion</button>
-        <button onClick={() => setSection('sports')}>Sports</button>
-        <button onClick={() => setSection('arts')}>Arts</button>
-        <button onClick={() => setSection('books')}>Books</button>
-        <button onClick={() => setSection('fashion')}>Style</button>
-        <button onClick={() => setSection('food')}>Food</button>
-        <button onClick={() => setSection('technology')}>Tech</button>
-      </nav>
+    <Navbar setSection={setSection} />
       {articleView
       ? <Article selected={selectedArticle}/>
       : <div className="news-feed">{stories.map(story => {
