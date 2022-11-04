@@ -21,12 +21,10 @@ useEffect(() => {
    console.log(stories)
   }, [section])
 
-const selectionHandler = (url) => {
+const selectionHandler = (story) => {
   setArticleView(true)
-  selectArticle((prevArticle) => {
-    return [...prevArticle, url]
-  })
-  console.log(selectedArticle)
+  selectArticle(story)
+  console.log(story)
 }
   return (
     <section>
@@ -44,9 +42,9 @@ const selectionHandler = (url) => {
         <button onClick={() => setSection('technology')}>Tech</button>
       </nav>
       {articleView
-      ? <Article />
+      ? <Article article={selectedArticle}/>
       : <div className="news-feed">{stories.map(story => {
-        return <article id={story.url} onClick={() => selectionHandler(story.url)} className="thumbnail" key={story.updated_date}>
+        return <article id={story.url} onClick={() => selectionHandler(story)} className="thumbnail" key={story.updated_date}>
           <h2>{story.title}</h2>
           <h3>{story.subsection}</h3>
           <img src={story.multimedia[0].url} height="200px" width="200px"/>
