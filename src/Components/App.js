@@ -9,7 +9,16 @@ function App() {
   const [section, setSection] = useState('home')
   const [isLoading, setLoading] = useState(true)
   const [articleView, setArticleView] = useState(false)
-  const [selectedArticle, selectArticle] = useState('')
+  const [selectedArticle, selectArticle] = useState({
+      title: '',
+      subsection: '',
+      published_date: '',
+      abstract: '',
+      multimedia: [{
+        url: ''
+      }],
+      byline: ''
+  })
   
 useEffect(() => {
   setArticleView(false)
@@ -42,9 +51,9 @@ const selectionHandler = (story) => {
         <button onClick={() => setSection('technology')}>Tech</button>
       </nav>
       {articleView
-      ? <Article article={selectedArticle}/>
+      ? <Article selected={selectedArticle}/>
       : <div className="news-feed">{stories.map(story => {
-        return <article id={story.url} onClick={() => selectionHandler(story)} className="thumbnail" key={story.updated_date}>
+        return <article onClick={() => selectionHandler(story)} className="thumbnail" key={story.short_url}>
           <h2>{story.title}</h2>
           <h3>{story.subsection}</h3>
           <img src={story.multimedia[0].url} height="200px" width="200px"/>
