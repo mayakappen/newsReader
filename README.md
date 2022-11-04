@@ -5,10 +5,10 @@ Users can sort news by categories and expand articles to view more details and a
 
 ![News Reader](https://user-images.githubusercontent.com/102932448/200022156-ce3ded05-b4dc-4fa5-9082-e44ef9bb5fde.gif)
 
-![News Reader](https://user-images.githubusercontent.com/102932448/200023032-7420dc17-35f5-4306-9780-6280f384c2e1.gif)
+![News Reader (1)](https://user-images.githubusercontent.com/102932448/200025267-d4b33b69-0e03-4404-841c-8d75561dd7a9.gif)
 
 ## Planning Documents
-* [wireframe](https://imgur.com/a/5qwuqOV)
+* [Wireframe](https://imgur.com/a/5qwuqOV)
 * [Project Board](https://github.com/users/mayakappen/projects/6/views/1)
 
 ## Tech Stack
